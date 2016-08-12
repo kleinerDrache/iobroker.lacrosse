@@ -1,0 +1,24 @@
+{
+    "common": {
+        "name":                     "lacrosse",
+        "version":                  "0.0.1",
+        "title":                    "ioBroker LaCrosse Adapter",
+        "desc":                     {"en": "ioBroker lacrosse adapter","de": "ioBroker Lacrosse Adapter"},
+        "platform":                 "Javascript/Node.js",
+        "mode":                     "daemon",
+        "icon":                     "lacrosse.png",
+        "enabled":                  false,
+	    "extIcon":                  "https://raw.githubusercontent.com/kleinerDrache/iobroker.lacrosse/master/admin/lacrosse.png",
+	    "keywords":                 ["LaCrosse", "Jeelink", "Hardware"],
+        "readme":                   "https://github.com/kleinerDrache/iobroker.lacrosse/blob/master/README.md",
+	    "loglevel":                 "info",
+        "type":                     "hardware"
+    },
+    "native": {
+      "comName":                  "COM10",
+      "stype":                    "LaCrosse",
+      "sensorids":                12
+    },
+    "objects": [
+    ]
+}
