@@ -18,7 +18,7 @@ npm install https://github.com/kleinerDrache/ioBroker.LaCrosse/tarball/master --
 
 Changelog:
 0.0.1:
-Initial
+ - Initial
 
 ## License
 The MIT License (MIT)
