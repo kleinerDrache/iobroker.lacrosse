@@ -3,22 +3,44 @@
         "name":                     "lacrosse",
         "version":                  "0.0.1",
         "title":                    "ioBroker LaCrosse Adapter",
-        "desc":                     {"en": "ioBroker lacrosse adapter","de": "ioBroker Lacrosse Adapter"},
+        "desc":                     {"en": "ioBroker lacrosse Adapter","de": "ioBroker Lacrosse Adapter","ru": "ioBroker Lacrosse драйвер как образец"},
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "lacrosse.png",
         "enabled":                  false,
-	    "extIcon":                  "https://raw.githubusercontent.com/kleinerDrache/iobroker.lacrosse/master/admin/lacrosse.png",
-	    "keywords":                 ["LaCrosse", "Jeelink", "Hardware"],
-        "readme":                   "https://github.com/kleinerDrache/iobroker.lacrosse/blob/master/README.md",
+	    "extIcon":                  "https://raw.githubusercontent.com/kleinerDrache/ioBroker.lacrosse/master/admin/lacrosse.png",
+	    "keywords":                 ["LaCrosse", "Jeelink"],
+        "readme":                   "https://github.com/kleinerDrache/ioBroker.lacrosse/blob/master/README.md",
 	    "loglevel":                 "info",
         "type":                     "hardware"
     },
     "native": {
-      "comName":                  "COM10",
-      "stype":                    "LaCrosse",
-      "sensorids":                12
+        "comName":                  "COM10",
+        "sensorid":                 ""
     },
     "objects": [
+    ],
+    "instanceObjects": [
+        {
+            "_id":  "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id":  "info.connection",
+            "type": "state",
+            "common": {
+                "role":  "indicator.connected",
+                "name":  "If connected to JeeLink",
+                "type":  "boolean",
+                "read":  true,
+                "write": false,
+                "def":   false
+            },
+            "native": {}
+        }
     ]
 }

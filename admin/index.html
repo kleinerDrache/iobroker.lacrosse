@@ -18,20 +18,17 @@
     // Dictionary (systemDictionary is global variable from adapter-settings.js)
     systemDictionary = {
         "jeelink adapter settings":
-            {"de": "Jeelink Adapter Einstellung", 
+            {"de": "jeelink Adapter Einstellung", 
              "ru": "Настройки jeelink Драйвера"
-        },
-
-        "serial/usb port":
-            {"de": "Serieller/USB Port"},
-
-        "sensor id":
-            {"de": "Sensor ID"},
-
+            },
+        "Com port:":
+            {"en": "Com port:",
+             "de": "Serialport:"
+            },
         "on save adapter restarts with new config immediately": 
             {"de": "Beim Speichern von Einstellungen der Adapter wird sofort neu gestartet.",
              "ru": "Сразу после сохранения настроек драйвер перезапуститься с новыми значениями"
-        }
+            }
     };
 
     // the function loadSettings has to exist ...
@@ -65,7 +62,12 @@
         callback(obj);
     }
 </script>
+<style>
+    .oneWidth {
+        width: 120px;
+    }
 
+</style>
 <!-- you have to put your config page in a div with id adapter-container -->
 <div id="adapter-container">
 
@@ -75,14 +77,13 @@
 
     <table>
         <tr>
-            <td class="translate">serial port/usb</td>
-            <td><input type="text" id="comName" class="value" id="serialport"/></td>
+           <td class="translate">Com port:</td><td><input class="value oneWidth" id="comName"></td><td>
         </tr>
         <tr>
     </table>
     
     <p>
-        <span class="translate">sensor id:</span> <input class="value" id="sensorids"/><br>
+        <span class="translate">Sensor ID:</span> <input class="value oneWidth" id="sensorid"/><br>
     </p>
 
     <p class="translate">on save adapter restarts with new config immediately</p>

@@ -34,23 +34,27 @@ adapter.on('ready', function () {
 });
 
 function main() {
-    var obj = adapter.config.sensorids;
+    adapter.subscribeStates('*');
+    //for(var i = 0, l = myArray.length; i < l; ++i)
+    var obj = adapter.config.sensorid.split(',');
+    var sensortype = "LaCrosse";
 
-    for (var anz in obj){
-        if(obj[anz].stype=="LaCrosse") {
-            adapter.setObject('LaCrosse_' + anz, {
+    for(var i = 0, l = obj.length; i < l; ++i){
+    //for (var anz in obj){
+        if(sensortype == "LaCrosse") {
+            adapter.setObject('LaCrosse_' + obj[i], {
                 type: 'channel',
                 common: {
                     name: 'LaCrosse ',
                     role: 'sensor'
                 },
                 native: {
-                    "addr": anz
+                    "addr": obj[i]
                 }
             });
-            adapter.log.info('RFM12B setting up object = LaCrosse ' + anz);
+            adapter.log.info('RFM12B setting up object = LaCrosse ' + obj[i]);
 
-            adapter.setObject('LaCrosse_' + anz + '.temp', {
+            adapter.setObject('LaCrosse_' + obj[i] + '.temp', {
                 type: 'state',
                 common: {
                     "name":     "Temperature",
@@ -65,7 +69,7 @@ function main() {
                 },
                 native: {}
             });
-            adapter.setObject('LaCrosse_' + anz + '.humid', {
+            adapter.setObject('LaCrosse_' + obj[i] + '.humid', {
                 type: 'state',
                 common: {
                     "name":     "Humidity",
@@ -80,7 +84,7 @@ function main() {
                 },
                 native: {}
             });
-            adapter.setObject('LaCrosse_' + anz + '.lowBatt', {
+            adapter.setObject('LaCrosse_' + obj[i] + '.lowBatt', {
                 type: 'state',
                 common: {
                     "name":     "Battery Low",
@@ -89,7 +93,7 @@ function main() {
                 },
                 native: {}
             });
-            adapter.setObject('LaCrosse_' + anz + '.newBatt', {
+            adapter.setObject('LaCrosse_' + obj[i] + '.newBatt', {
                 type: 'state',
                 common: {
                     "name":     "Battery New",
@@ -133,6 +137,7 @@ function main() {
                         // somit werden alle SendorIDs bearbeitet
                         var tmpp=tmp.splice(2,6);       // es werden die vorderen Blöcke (0,1,2) entfernt
                         adapter.log.debug('splice       : '+ tmpp);
+                        adapter.log.debug(sensortype);
                         var buf = new Buffer(tmpp);
                         adapter.log.debug('Sensor ID    : '+ (buf.readIntLE(0)));
                         adapter.log.debug('Type         : '+ ((buf.readIntLE(1) & 0x70) >> 4));
@@ -150,5 +155,4 @@ function main() {
             });
         }
     });
-    adapter.subscribeStates('*');
 }
