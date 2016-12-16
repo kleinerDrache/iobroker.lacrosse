@@ -25,7 +25,7 @@
     "url": "git+https://github.com/kleinerDrache/ioBroker.lacrosse.git"
   },
   "dependencies": {
-    "serialport": "2.0.3"
+    "serialport": "^3.1.2"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -36,7 +36,9 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compress": "^0.13.0",
     "grunt-contrib-copy": "^0.8.0",
-    "grunt-exec": "^0.4.6"
+    "grunt-exec": "^0.4.6",
+    "mocha": "^2.4.5",
+    "chai": "^3.5.0"
   },
   "bugs": {
     "url": "https://github.com/kleinerDrache/ioBroker.lacrosse/issues"
@@ -44,7 +46,10 @@
   "readmeFilename": "README.md",
   "readme": "![Logo](admin/lacrosse.png)\r\n# ioBroker.LaCrosse\r\n===================\r\n\r\nThis is an adapter for ioBroker to integrate RFM12B/RFM69 via Jeelink.\r\nThe JeeLink Firmware iss locatet in Admin Dir. Flash on Linux with the Following Command on Console in the Firmware Dir:\r\n\r\napt-get install avrdude\r\n\r\navrdude -p atmega328P -c arduino -P [PORT] -D -U flash:w:JeeLink_LaCrosse.hex 2>flash.log\r\n\r\nfor port set your Jeelink USB device.\r\n\r\nInstallation:\r\n\r\nnpm install https://github.com/kleinerDrache/ioBroker.LaCrosse/tarball/master --production\r\n\r\n\r\nChangelog:\r\n0.0.1\r\n\r\n## License\r\nThe MIT License (MIT)\r\n\r\nCopyright (c) 2015 @@kleinerDrache@@<@@timlieber75@gmail.com@@>\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the \"Software\"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in\r\nall copies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\r\nTHE SOFTWARE.\r\n\r\nThe above copyright notice and this permission notice shall be included in\r\nall copies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\r\nTHE SOFTWARE.\r\n",
   "_id": "iobroker.lacrosse@0.0.1",
-  "scripts": {},
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha"
+  },
+  "main": "main.js",
   "_shasum": "ada0269f2367c10507fdf529809ebc216233bb2b",
   "_from": "..\\temp\\iobroker.lacrosse",
   "_resolved": "file:..\\temp\\iobroker.lacrosse"
