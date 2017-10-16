@@ -1,25 +1,36 @@
 {
     "common": {
-        "name":                     "lacrosse",
-        "version":                  "0.0.1",
-        "title":                    "ioBroker LaCrosse Adapter",
-        "desc":                     {"en": "ioBroker lacrosse Adapter","de": "ioBroker Lacrosse Adapter","ru": "ioBroker Lacrosse драйвер как образец"},
-        "platform":                 "Javascript/Node.js",
-        "mode":                     "daemon",
-        "icon":                     "lacrosse.png",
-        "enabled":                  false,
-	    "extIcon":                  "https://raw.githubusercontent.com/kleinerDrache/ioBroker.lacrosse/master/admin/lacrosse.png",
-	    "keywords":                 ["LaCrosse", "Jeelink"],
-        "readme":                   "https://github.com/kleinerDrache/ioBroker.lacrosse/blob/master/README.md",
-	    "loglevel":                 "info",
-        "type":                     "hardware"
+        "name": "lacrosse",
+        "version": "0.0.1",
+        "title": "ioBroker LaCrosse Adapter",
+        "desc": {
+            "en": "ioBroker lacrosse Adapter",
+            "de": "ioBroker Lacrosse Adapter",
+            "ru": "ioBroker Lacrosse драйвер как образец"
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "lacrosse.png",
+        "enabled": false,
+        "extIcon": "https://raw.githubusercontent.com/kleinerDrache/ioBroker.lacrosse/master/admin/lacrosse.png",
+        "keywords": [
+            "LaCrosse",
+            "Jeelink"
+        ],
+        "readme": "https://github.com/kleinerDrache/ioBroker.lacrosse/blob/master/README.md",
+        "loglevel": "info",
+        "type": "hardware",
+        "authors": [
+            {
+                "name": "Tim Lieber",
+                "email": "timlieber75@gmail.com"
+            }
+        ]
     },
     "native": {
-        "comName":                  "COM10",
-        "sensorid":                 ""
+        "comName": "COM10",
+        "sensorid": ""
     },
-    "objects": [
-    ],
-    "instanceObjects": [
-    ]
+    "objects": [],
+    "instanceObjects": []
 }
