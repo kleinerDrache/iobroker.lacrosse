@@ -3,7 +3,7 @@
 "use strict";
 
 var utils =    require(__dirname + '/lib/utils');
-var adapter = utils.adapter('lacrosse');
+var adapter = utils.Adapter('lacrosse');
 var serialport = require('serialport');
 var SerialPort = serialport.SerialPort;
 
