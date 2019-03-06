@@ -8,6 +8,7 @@
             "de": "ioBroker Lacrosse Adapter",
             "ru": "ioBroker Lacrosse драйвер как образец"
         },
+        "license": "MIT",
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "lacrosse.png",
