@@ -1,6 +1,6 @@
 ![Logo](admin/lacrosse.png)
 # ioBroker.LaCrosse
-===================
+![Number of Installations](http://iobroker.live/badges/lacrosse-installed.svg) ![Number of Installations](http://iobroker.live/badges/lacrosse-stable.svg) ===================
 
 This is an adapter for ioBroker to integrate RFM12B/RFM69 via Jeelink.
 The JeeLink Firmware iss locatet in Admin Dir. Flash on Linux with the Following Command on Console in the Firmware Dir:
